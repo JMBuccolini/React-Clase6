@@ -1,7 +1,7 @@
 import { TYPES } from "../actions/actions";
 import { useReducer } from "react";
 import { shoppingReducer, shoppingInitialState } from "../reducer/reducer";
-import styles from '../styles/products.css';
+import styles from '../styles/products.css?inline';
 import Product from "./Product";
 import CartItem from "./CartItem";
 
@@ -43,11 +43,11 @@ const ShoppingCart = () => {
                     data={product} addToCart={addToCart} />)}
             </div>
             <h3>Cart</h3>
+            <button onClick={clearCart}>Limpiar Carrito</button>
             <div className="box">
                 {cart.map((item, index) => <CartItem key={index}
                     data={item} deleteFromCart={deleteFromCart} />)}
             </div>
-            <button onClick={clearCart}>Limpiar Carrito</button>
         </>
     );
 
