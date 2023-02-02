@@ -1,0 +1,27 @@
+.product_div{
+    display: flex;
+    justify-content: space-around;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: black;
+}
+
+.product{
+    border-radius: 5px;
+    border-style:solid;
+    border-width: 3px;
+    margin: 10px;
+}
+
+.product_btn{
+    background-color: grey;
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin: 2px;
+    transition-duration: 0.4s;
+}
+
+.product_btn:hover{
+    background-color: #4CAF50;
+    color: white;
+}
