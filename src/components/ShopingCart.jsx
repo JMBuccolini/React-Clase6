@@ -41,13 +41,6 @@ const ShoppingCart = () => {
         }
     };
 
-
-
-    const clearCart = () => {
-        dispatch({ type: TYPES.CLEAR_CART });
-    };
-
-
     return (
         <>
             <h1>Carrito de Compras</h1>
@@ -57,7 +50,7 @@ const ShoppingCart = () => {
                     data={product} addToCart={addToCart} />)}
             </div>
             <h3>Cart</h3>
-            <button onClick={clearCart}>Limpiar Carrito</button>
+            <button onClick={updateState}>Limpiar Carrito</button>
             <div className="box">
                 {cart.map((item, index) => <CartItem key={index}
                     data={item} deleteFromCart={deleteFromCart} />)}
