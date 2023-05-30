@@ -2,28 +2,33 @@
     "products": [
       {
         "id": 1,
-        "name": "Producto A",
-        "price": 10
+        "name": "Pizza",
+        "price": 10,
+        "image": "/imagenes/pizza.jpg"
       },
       {
         "id": 2,
-        "name": "Producto B",
-        "price": 50
+        "name": "Play Station 5",
+        "price": 1000,
+        "image": "/imagenes/ps5.png"
       },
       {
         "id": 3,
-        "name": "Producto C",
-        "price": 100
+        "name": "MacBook Pro",
+        "price": 1200,
+        "image": "/imagenes/macbookpro.jpg"
       },
       {
         "id": 4,
-        "name": "Producto D",
-        "price": 150
+        "name": "Iphone 14Pro-Max",
+        "price": 1300,
+        "image": "/imagenes/iphone14.jpg"
       },
       {
         "id": 5,
-        "name": "Producto E",
-        "price": 200
+        "name": "Arepas",
+        "price": 5,
+        "image":"/imagenes/arepas.jpg"
       }
     ],
     "cart": []

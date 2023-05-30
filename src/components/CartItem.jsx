@@ -1,4 +1,4 @@
-
+import '../styles/products.css'
 
 
 const CartItem = ({data, deleteFromCart}) => {
@@ -6,11 +6,11 @@ const CartItem = ({data, deleteFromCart}) => {
     let {id, name, price, quantity} = data;
 
     return (
-        <div className="cart-item">
+        <div className="product">
 
             <h4>{name}</h4>
 
-            <h5>${price} x {quantity} = ${price * quantity}</h5>
+            <h5>U$D{price} x {quantity} = U$D{price * quantity}</h5>
 
             <button onClick={() => deleteFromCart(id)}>Eliminar uno</button>
 

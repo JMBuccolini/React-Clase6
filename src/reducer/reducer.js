@@ -11,9 +11,9 @@ export function shoppingReducer(state, action) {
     switch (action.type) {
         case TYPES.READ_STATE: {
             return {
-                ...state,
-                products: action.payload[0],
-                cart: action.payload[1]
+                ...state, //me traigo todo el estado, que inicialmente es = {products:[],cart:[]}
+                products: action.payload[0],//agregale a state.products : [{id:1,name:pizza,price:10},{id:2,name:ps5,price:1200},{},{},{}]
+                cart: action.payload[1]//agregale a state.cart: []
             }
         }
         case TYPES.ADD_TO_CART: {

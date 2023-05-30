@@ -9,18 +9,27 @@ import CartItem from "./CartItem";
 
 const ShoppingCart = () => {
     const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
-
+    //state = {products:[],cart:[]} ---> state={products:[{},{},{,},{}], cart:[]}
     const {products, cart} = state
 
+    //agregamos la función que toma la info de la db
+
     const updateState = async () => {
-        const resProducts = await axios("http://localhost:3000/products");
-        const resCart = await axios("http://localhost:3000/cart");
-        const newProduct = await resProducts.data
-        const newCartItem = await resCart.data
+                                        
+        const resProducts = await axios("http://localhost:3000/products"); //conseguime la lista de productos
+       
+        const resCart = await axios("http://localhost:3000/cart"); //conseguime los productos que estén en el carrito
+
+
+        const newProduct = await resProducts.data //accedo al .data que me da axios, guardo esa info en una variable newProduct
+        //axios.post('http://localhost:3000/productos", newProduct)
+        
+        const newCartItem = await resCart.data // accedo al .data que me da axios, guardo esa info en una variable newCartItem
     
         dispatch({type: TYPES.READ_STATE, payload: [newProduct, newCartItem]})
     }
     
+    //agregamos el useEffect para que la función se dispare apenas se monta el componente
     useEffect(() => {
         updateState()
     }, [])
@@ -28,6 +37,7 @@ const ShoppingCart = () => {
     const addToCart = (id) => {
         console.log(id)
         dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+        
     };
 
 
@@ -50,8 +60,10 @@ const ShoppingCart = () => {
                     data={product} addToCart={addToCart} />)}
             </div>
             <h3>Cart</h3>
+
             <button onClick={updateState}>Limpiar Carrito</button>
-            <div className="box">
+
+            <div className="product_div">
                 {cart.map((item, index) => <CartItem key={index}
                     data={item} deleteFromCart={deleteFromCart} />)}
             </div>
